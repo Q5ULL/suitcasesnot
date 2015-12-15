@@ -1,0 +1,214 @@
+
+Theme Name: SuitcaseSnot
+Theme URI:
+Author: Ursula Llaveria
+Author URI: 
+Description:
+Version: 1
+License: 
+License URI: 
+Tags: 
+Text Domain: suitcasesnot
+
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; 
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  clear: both;
+  display: table;
+  content: '';
+  font-size: 0;
+}
+
+html,
+body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+body{
+	background:#e6e6e6;
+	color:#333;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+header {
+	background: #EB7159;
+	color: #ffffff;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+#branding{
+	padding: 10px;
+    border-bottom: 5px solid ;
+}
+#branding h1 {
+	margin: 0px;
+	padding: 0px;
+}
+#site-title {
+	font-family: 'Kanit', sans-serif;
+
+}
+	#site-title a {
+		font-weight: 900;
+		text-transform: uppercase;
+		font-size: 2em;
+		color: #ffffff;
+	}
+	#site-title a:hover {
+		text-shadow: 0px -4px 0px rgba(221, 106, 84, 0.5);
+	}
+#search {
+	display: none;
+	outline: none;
+}
+
+/*.menu {
+	float: left;
+}*/
+
+#menu-main-menu {
+	display: inline-block;
+	text-align: center;
+}
+#menu-main-menu li {
+	display: inline-block;
+}
+#menu-main-menu li a {
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 1.5em;
+	letter-spacing: .2em;
+	color: white;
+	text-shadow: 0 0 3px rgba(black, .3);
+	font-weight: 100;
+	transition: .1s color;
+	-webkit-transition: .1s color;
+}
+#menu-main-menu li a:hover{
+  background: rgba(white, .1);
+}
+
+/*.screen-reader-text {
+	display: none;
+}
+#searchsubmit:hover {
+	background: #ffffff;
+}*/
+
+#container {
+	margin: 0 auto;
+		/*padding-bottom: 100%;*/
+	max-width: 980px;
+    margin: 0 auto;
+}
+#wrapper {
+	position: relative;
+	min-height: 99%;
+}
+/*--------------------------------------------*/
+
+.grid {
+    position: relative;
+    clear: both;
+    margin: 0 auto;
+    padding: 1em 0 4em;
+    max-width: 1000px;
+    list-style: none;
+    text-align: center;
+}
+.figure{
+	position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 320px;
+    max-width: 480px;
+    max-height: 360px;
+    width: 48%;
+    height: auto;
+    background: #3085a3;
+    text-align: center;
+    cursor: pointer;
+}
+
+.grid .figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+.effect-smooth {
+	z-index: auto;
+}
+
+/*---------------------------------------------*/
+.full {
+	background-image: url("../");
+}
+/*---------------------------------------------*/
+/* Media queries */
+@media screen and (max-width: 50em) {
+	.content {
+		padding: 0 10px;
+		text-align: center;
+	}
+	.grid figure {
+		display: inline-block;
+		float: none;
+		margin: 10px auto;
+		width: 100%;
+	}
+}
+/*---------------------------------------------*/
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+/*footer{
+	height: 50px; 
+	background: blue;
+	position: absolute; 
+	//tells the browser to position #footer relative to #wrapper
+	bottom: 3; 
+	sticks the footer 3px above the bottom edges of the #wrapper div
+	width: inherit;
+	text-align: center;
+}
