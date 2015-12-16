@@ -13,13 +13,13 @@
 			<pre>
 
 			<? 
-				$img = get_field("project_image"); 
+
 				// this is if you set up your field as an object
 			?>
 
 			</pre>
 			<!-- grab the field image id from the array defined above, $img[] -->
-			<?=wp_get_attachment_image( $img["id"], "medium"); ?>
+
 			
 			<!-- this is the content editor -->
 			<? the_content(); ?>
@@ -35,42 +35,44 @@
 			</h3>
 
 			<ul>
+<?php 
 
-			<?
-				if( have_rows('project_images')):
-					
-					// if there are rows, loop through them
-					while (have_rows('project_images')):
-						// we are on the attributes repeater field
-						the_row(); 
-						$img_thumb = get_sub_field("image_thumbnails");
-					?>
-						<li>
-							<!--<? the_sub_field('image_thumbnails'); ?>-->
-							<!-- the above code will print out all of the object data -->
-							<?=wp_get_attachment_image( $img_thumb['id'], "thumbnail"); ?>
-							
-						</li>
+						/*
+						*  Query posts for a relationship value.
+						*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+						*/
 
-					<? endwhile;
-				endif;
-			?>
+						$doctors = get_posts(array(
+							'post_type' => 'project',
+							'meta_query' => array(
+								array(
+									'key' => 'project_skills', // name of custom field
+									'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+									'compare' => 'LIKE'
+								)
+							)
+						));
+
+						?>
+						<?php if( $doctors ): ?>
+							<ul>
+							<?php foreach( $doctors as $doctor ): ?>
+
+								<li>
+									<a href="<?php echo get_permalink( $doctor->ID ); ?>">
+										<?php echo get_the_title( $doctor->ID ); ?>
+									</a>
+								</li>
+							<?php endforeach; ?>
+							</ul>
+						<?php endif; ?>
+						
 			</ul>
 			<!-- <? the_sub_field('value'); ?> -->
 
 
 
-		<ul>
-			<h2>Skills</h2>
-			<?
-			// print_r(get_field("project_skills"));
-				foreach ( get_field("project_skills") as $attr): ?>
-				<li>
-					<b><?=$attr['project_skill_type']; ?></b>
-				</li>
-				<? endforeach; 
-			?>
-		</ul>
+
 
 <!-- 					<?=$attr['value']; ?> -->
 

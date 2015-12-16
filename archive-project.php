@@ -1,25 +1,28 @@
 <? get_header(); ?>
 <section id="content" role="main">
 	
-	archive-project.php template
+<!-- 	archive-project.php template
 ​
 	<h1>A Project?</h1>
-	<h2>the path is /project</h2>
+	<h2>the path is /project</h2> -->
 ​
 	<div class="clearfix">
 		<ul class="recent_posts grid">
 		<? if ( have_posts() ) { 
 			while ( have_posts() ) { 
 				the_post(); ?>
-				<li class="figure effect-smooth" style="height:200px;width:200px;background-size:contain;background-image: url(<?=get_field("project_image")["url"];?>)">
-					<h1>
-						<a href="<? the_permalink();?>">
-							<? the_title(); ?>
+
+				<li>
+					<figure class="effect-oscar">
+					<a href="<? the_permalink();?>">
+						<img src="<?=get_field("project_image")["url"];?>" alt="">
+						<figcaption>
 							<!-- call the title of the project labeled posts -->
-						</a>
-					</h1>
-						
-					<? the_content(); ?>
+							<h2><? the_title(); ?></h2>
+							<p><? the_content(); ?></p>
+						</figcaption>
+					</a>
+					</figure>
 				</li>
 			<? }
 		} ?>
