@@ -15,7 +15,11 @@ get_header();
 // below will print out on the page, below the header
 ?>
 
-	<h2 class="full" style="background-size:contain;background-image: url(<?=get_field("project_image")["url"];?>)"></h2>
+	<h1 class="full">
+
+	hello
+
+	</h2>
 	<!-- <ul> -->
 <?
 
