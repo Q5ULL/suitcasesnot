@@ -149,7 +149,6 @@ li {
     max-width: 1000px;
     list-style: none;
     text-align: center;
-    border: 1px solid green;
     padding-bottom: 1em;
 }
 .grid_2 figure {
@@ -168,6 +167,12 @@ figure{
     /*background: #3085a3;*/
     text-align: center;
     cursor: pointer;
+}
+.testimonial figure {
+	background-color: rgba(18,72,42,0.7);
+}
+.testimonial.grid figure figcaption {
+	position: relative;
 }
 
 .grid figure img {

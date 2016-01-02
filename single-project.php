@@ -59,7 +59,7 @@
 					endif;
 				?>
 				<ul>
-					<h2>Skills</h2>
+					<h2>Talents</h2>
 					<?php 
 						$skills = get_field('project_skills');
 					?>
